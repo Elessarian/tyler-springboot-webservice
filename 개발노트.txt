@@ -1,12 +1,24 @@
+[Application]
 @SpringBootApplication
  - 스프링부트의 자동설정, 스프링 Bean 읽기와 생성을 모두 자동으로 설정
  - 해당 위치부터 설정을 읽음 -> 항상 프로젝트 최상단에 위치해야함
-
 SpringApplication.run
  - 별도 외부 WAS를 두지 않고 애플리케이션 실행 시 내부 wAS를 실행
  - 톰캣 설치 불필요
  - 스프링 부트에서는 내장 WAS를 사용하는 것을 권장
  - 언제 어디서나 같은 환경에서 스프링 부트를 배포할수 있음.
+
+[Domain]
+@Entity
+ - 테이블과 링크될 클래스
+ - 카멜케이스와 언더스코어네이밍(_) 매칭
+@Id
+ - 테이블의 PK 필드
+@GeneratedValue
+ - PK 생성 규칙
+ - GenerationType.IDENTITY: auto_increment
+@Column
+ - 테이블 칼럼
 
 [라이브러리]
 lombok
@@ -16,6 +28,7 @@ lombok
  @RequiredArgsConstructor
   - 선언된 모든 final 필드가 포함된 생성자를 생성해 준다.
   - final이 없는 필드는 생성자에 포함되지 않는다.
+
 [Package]
 .web
  - 컨트롤러와 관련된 클래스들 호판
@@ -55,3 +68,13 @@ assertThat
 jsonPath
  - JSON 응답값을 필드별로 검증할 수 있는 메소드
  - $를 기준으로 필드명을 명시한다.($.name, $.amount)
+@After
+ - 단위 테스트가 끝날 때마다 수행되는 메소드
+
+[dependencys]
+spring-boot-starter-data-jpa
+ - 스프링 부트용 추상화 라이브러리
+ - JPA관련 라이브러리들 버전 관리
+h2
+ - 인메모리 관계형 데이터베이스
+ - 애플리케이션 재시작시 초기화 됨
