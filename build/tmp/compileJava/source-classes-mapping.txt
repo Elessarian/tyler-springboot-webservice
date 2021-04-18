@@ -1,2 +1,0 @@
-com/tyler/book/springboot/Application.java
- com.tyler.book.springboot.Application
