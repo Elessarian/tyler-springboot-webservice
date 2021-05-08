@@ -78,3 +78,8 @@ spring-boot-starter-data-jpa
 h2
  - 인메모리 관계형 데이터베이스
  - 애플리케이션 재시작시 초기화 됨
+
+[scope=profile,email]
+ - scope 지정 안하면 기본 openid, profile, email 등록
+ - openid가 있으면 Open Id Provider로 인식함
+ - 구글과 타 서비스 구분하여 OAuth2Service를 만들어야하므로 지정하여 제외
